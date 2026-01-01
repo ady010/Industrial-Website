@@ -7,7 +7,7 @@ import punctual from "../assets/punctual.png";
 const MainPage = () => {
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-500 via-gray-300 to-gray-500">
-      <nav className="bg-transparent sticky top-0 z-50 bg-blur ">
+      <nav className=" bg-transparent sticky top-0 z-50 bg-blur ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}

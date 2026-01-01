@@ -21,7 +21,7 @@ const ServiceCard = ({ title, description, image, delay }) => {
       className="bg-white/5 backdrop-blur-sm border border-slate-200/20 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 group flex flex-col h-full"
     >
       <div className="h-48 overflow-hidden bg-white p-6 flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-100/50 to-transparent z-0" />
+        <div className="absolute inset-0 bg-linear-to-tr from-slate-100/50 to-transparent z-0" />
         <img
           src={image}
           alt={title}
@@ -29,16 +29,16 @@ const ServiceCard = ({ title, description, image, delay }) => {
         />
       </div>
 
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="p-8 flex flex-col grow">
         <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">
           {title}
         </h3>
-        <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-400 mb-6 grow leading-relaxed">
           {description}
         </p>
 
         <button className="group/btn relative overflow-hidden rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] w-full flex items-center justify-center gap-2">
-          <span>Get Quote</span>
+          <span>Detail </span>
           <ArrowRight
             size={18}
             className="transition-transform group-hover/btn:translate-x-1"
@@ -97,7 +97,7 @@ const Services = () => {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-6"
+            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-6"
           >
             Services We Offer
           </motion.h1>
