@@ -62,18 +62,6 @@ const InputField = ({
 };
 
 const Form = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Request submitted successfully!");
-    }, 2000);
-  };
-
   return (
     <section className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-3xl relative z-10">
@@ -92,7 +80,11 @@ const Form = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form
+            action="https://formspree.io/f/xqeaazyr"
+            method="POST"
+            encType="multipart/form-data"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <InputField
                 label="Company Name"
@@ -162,17 +154,10 @@ const Form = () => {
 
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-slate-900 dark:bg-blue-600 text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full bg-slate-900 dark:bg-blue-600 text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              {isSubmitting ? (
-                <>Processing...</>
-              ) : (
-                <>
-                  Submit Request
-                  <Send size={18} />
-                </>
-              )}
+              Submit Request
+              <Send size={18} />
             </button>
           </form>
         </motion.div>
