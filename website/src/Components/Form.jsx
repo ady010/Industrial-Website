@@ -61,18 +61,35 @@ const InputField = ({
   );
 };
 
-const Form = () => {
+const Form = ({ embedded = false }) => {
+  const Wrapper = embedded ? "div" : "section";
+  const wrapperClass = embedded
+    ? "w-full"
+    : "py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden";
+
+  const containerClass = embedded
+    ? ""
+    : "container mx-auto px-4 max-w-3xl relative z-10";
+
+  const cardClass = embedded
+    ? "bg-transparent"
+    : "bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-100 dark:border-slate-700";
+
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-3xl relative z-10">
+    <Wrapper className={wrapperClass}>
+      <div className={containerClass}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-100 dark:border-slate-700"
+          className={cardClass}
         >
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+            <h2
+              className={`text-3xl font-bold text-slate-900 dark:text-white mb-2 ${
+                embedded ? "text-2xl" : ""
+              }`}
+            >
               Request a Quote
             </h2>
             <p className="text-slate-500 dark:text-slate-400">
@@ -125,14 +142,14 @@ const Form = () => {
 
             <div className="mb-8">
               <label className="block text-slate-600 dark:text-slate-300 text-sm font-medium mb-3">
-                Drawings (PDF or DWG - Optional)
+                Drawings (PDF,IGS,DWG)
               </label>
               <div className="relative border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl p-6 text-center hover:border-blue-500 transition-colors cursor-pointer group">
                 <input
                   type="file"
                   id="drawings"
                   name="drawings"
-                  accept=".pdf,.dwg"
+                  accept=".pdf,.igs,.dwg"
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                 />
                 <div className="flex flex-col items-center">
@@ -146,7 +163,7 @@ const Form = () => {
                     or drag and drop
                   </p>
                   <p className="text-xs text-slate-400 mt-1">
-                    PDF, DWG (Max 10MB)
+                    PDF,IGS,DWG (Max 30MB)
                   </p>
                 </div>
               </div>
@@ -162,7 +179,7 @@ const Form = () => {
           </form>
         </motion.div>
       </div>
-    </section>
+    </Wrapper>
   );
 };
 

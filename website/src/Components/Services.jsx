@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import VMC from "../assets/VMC.png";
 // Fix potential space in filename if it exists in the filesystem, trusting the previous file reading
@@ -37,13 +38,16 @@ const ServiceCard = ({ title, description, image, delay }) => {
           {description}
         </p>
 
-        <button className="group/btn relative overflow-hidden rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] w-full flex items-center justify-center gap-2">
+        <Link
+          to="/services"
+          className="group/btn relative overflow-hidden rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] w-full flex items-center justify-center gap-2"
+        >
           <span>Detail </span>
           <ArrowRight
             size={18}
             className="transition-transform group-hover/btn:translate-x-1"
           />
-        </button>
+        </Link>
       </div>
     </motion.div>
   );
@@ -54,25 +58,25 @@ const Services = () => {
     {
       title: "VMC Machining",
       description:
-        "High-precision Vertical Machining Center service for complex, custom parts with superior accuracy.",
+        "High-precision Vertical Machining Center services for complex, custom parts with exceptional accuracy.",
       image: VMC,
     },
     {
       title: "Horizontal Machining",
       description:
-        "Robust horizontal machining and milling capabilities, ensuring efficiency and consistency for large orders.",
+        "Robust horizontal machining and milling for efficient, consistent production of large orders.",
       image: Hori,
     },
     {
       title: "Metal Pressing",
       description:
-        "Precision sheet metal pressing and forming fabrication for diverse industrial applications.",
+        "Precision sheet metal pressing and forming for a wide range of industrial applications.",
       image: press,
     },
     {
       title: "Custom Fabrication",
       description:
-        "Tailored fabrication solutions with strict quality control to meet specific project requirements.",
+        "Tailored fabrication solutions with strict quality control to meet exact project requirements.",
       image: fabri,
     },
   ];

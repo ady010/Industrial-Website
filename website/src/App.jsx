@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import MainPage from "./Components/MainPage";
 import Services from "./Components/Services";
 import Customers from "./Components/Customers";
@@ -6,8 +7,9 @@ import Served from "./Components/Served";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Form from "./Components/Form";
+import DetailedServices from "./Components/DetailedServices";
 
-const App = () => {
+const Home = () => {
   return (
     <div>
       <div id="home">
@@ -32,6 +34,15 @@ const App = () => {
         <Footer />
       </div>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/services" element={<DetailedServices />} />
+    </Routes>
   );
 };
 
