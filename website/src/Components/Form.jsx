@@ -104,24 +104,13 @@ const Form = ({ embedded = false }) => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <InputField
-                label="Company Name"
+                label="Name"
                 type="text"
                 id="companyName"
                 name="companyName"
                 icon={Briefcase}
                 required
               />
-              <InputField
-                label="Quotation For"
-                type="text"
-                id="quotationFor"
-                name="quotationFor"
-                icon={FileText}
-                required
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <InputField
                 label="Email Address"
                 type="email"
@@ -130,12 +119,25 @@ const Form = ({ embedded = false }) => {
                 icon={Mail}
                 required
               />
-              <InputField
+            
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+               <InputField
                 label="Contact Number"
                 type="tel"
                 id="contact"
                 name="contact"
                 icon={Phone}
+                required
+              />  
+               <InputField
+                label="Quotation For"
+                type="text"
+                id="quotationFor"
+                name="quotationFor"
+                icon={FileText}
                 required
               />
             </div>

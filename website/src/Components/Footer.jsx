@@ -173,7 +173,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        {/* <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <p>© {currentYear} Company Name. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">
@@ -183,7 +183,7 @@ const Footer = () => {
               Terms of Service
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
