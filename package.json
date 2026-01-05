@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "cd website && npm run dev"
+    "dev": "cd website && npm run dev",
+    "prebuild": "rm -rf node_modules"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
