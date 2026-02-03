@@ -14,7 +14,7 @@ const MainPage = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <div className="shrink-0">
-              <img className=" h-25 w-25" src={logo} alt="Logo" />
+              <img className=" h-25 w-25 " src={logo} alt="Logo" />
             </div>
 
             {/* Navigation Links */}
@@ -26,7 +26,7 @@ const MainPage = () => {
                 Get Quote
               </a>
               <a
-                href="#Home"
+                href="#home"
                 className=" hover:text-gray-400 font-medium transition-colors duration-200"
               >
                 Home
@@ -97,7 +97,7 @@ const MainPage = () => {
           <div className="md:hidden bg-slate-900/95 backdrop-blur-lg absolute top-16 left-0 w-full p-4 border-t border-slate-700/50 shadow-xl animate-in fade-in slide-in-from-top-5 duration-200 h-screen">
             <div className="flex flex-col space-y-6 items-center py-8">
               <a
-                href="#Home"
+                href="#home"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-300 text-xl font-medium hover:text-white transition-colors"
               >
